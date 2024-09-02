@@ -1,7 +1,9 @@
 #include <iostream>
+#include<ctime>
 using namespace std;
 
 void gameStory() {
+    system("clear");
     cout << "---------------------------------------\nForgotten Treasure of the Evergreen\n---------------------------------------\n" << endl;
     cout << "Eldon, a brave boy, ventured into the Evergreen Forest \nin search of a legendary map that would lead him \nto the Forgotten Treasure." << endl;
     cout << "\n---------------------------------------\n" << endl;
@@ -56,16 +58,19 @@ public:
         }
     }
     
-    int GiveDamage(int damage)
+    int GiveDamage()
     {
+        srand(time(0));
+        int randomDamage = (rand() % (maxDamage - minDamage + 1) + minDamage);
         // enemyHealth -= dmage;
         return 0;
     }
     
-    void Heal(int heal)
+    void Heal()
     {
-        cout<<"Eldon will get "<<heal<<" health."<<endl;
-        health += heal;
+        int randomHeal = (rand() % (maxHealing - minHealing + 1) + minHealing);
+        cout<<"Eldon will get "<<randomHeal<<" health."<<endl;
+        health += randomHeal;
         cout<<"Eldon's current health after getting healed is : "<<health<<endl;
     }
 };
